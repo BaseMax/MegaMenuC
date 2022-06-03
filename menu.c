@@ -7,6 +7,7 @@
 
 #include <mysql.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 struct tree_value_t;
@@ -61,8 +62,7 @@ struct tree_t* menu(MYSQL *con, int parent_id)
     if (mysql_query(con, sql)) db_error_exit(con);
     MYSQL_RES *result = mysql_store_result(con);
     if (result == NULL) db_error_exit(con);
-    int num_fields = mysql_num_fields(result);
-
+    // int num_fields = mysql_num_fields(result);
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(result))) {
         // for(int i = 0; i < num_fields; i++) {
@@ -72,7 +72,8 @@ struct tree_t* menu(MYSQL *con, int parent_id)
 
         struct tree_value_t *item = (struct tree_value_t*)malloc(sizeof(struct tree_value_t));
         item->id = row[0];
-        item->name = row[1];
+        item->name = malloc(sizeof(char) * (strlen(row[1]) + 1));
+        strcpy(item->name, row[1]);
         item->children = menu(con, atoi(row[0]));
 
         items->items[items->size++] = item;
