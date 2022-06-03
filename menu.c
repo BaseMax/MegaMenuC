@@ -3,6 +3,7 @@
  * Date: 2022/06/03
  * Author: Max Base
  * Repository: https://github.com/BaseMax/MegaMenuC
+ * Description: MegaMenuC is a simple menu system for C that allows you to recursively get menu items and its submenus.
  */
 
 #include <mysql.h>
