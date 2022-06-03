@@ -1,5 +1,7 @@
 # Mega Menu C
 
+**MegaMenuC** is a simple menu system for C that allows you to recursively get menu items and its submenus.
+
 ## Using
 
 ```sh
