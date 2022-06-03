@@ -9,7 +9,26 @@ $ gcc menu.c -o menu -I/usr/include/mysql -lmysqlclient
 $ ./menu
 ```
 
-### Test Data
+### Tree
+
+```
+- Personal cabinet
+- News
+     - Sub Test 1
+          - Sub Test 2
+- Sitemap
+     - Sub Test 1
+          - Sub Test 2
+- Information
+     - Sub Test 1
+          - Sub Test 2
+- Contacts
+- System
+     - Official site
+     - Supporting forum
+```
+
+### Test Table Data
 
 **Menu:**
 
@@ -42,25 +61,6 @@ $ ./menu
 | 8 | Supporting forum |
 | 9 | Sub Test 1 |
 | 10, | Sub Test 2 |
-
-### Tree
-
-```
-- Personal cabinet
-- News
-     - Sub Test 1
-          - Sub Test 2
-- Sitemap
-     - Sub Test 1
-          - Sub Test 2
-- Information
-     - Sub Test 1
-          - Sub Test 2
-- Contacts
-- System
-     - Official site
-     - Supporting forum
-```
 
 ### Database Structure
 
