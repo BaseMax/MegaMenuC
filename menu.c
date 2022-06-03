@@ -24,9 +24,9 @@ struct tree_value_t {
 
 void db_error_exit(MYSQL *con)
 {
-  fprintf(stderr, "Sorry, Error: %s\n", mysql_error(con));
-  mysql_close(con);
-  exit(1);
+    fprintf(stderr, "Sorry, Error: %s\n", mysql_error(con));
+    mysql_close(con);
+    exit(1);
 }
 
 void display(struct tree_t* tree, int space)
