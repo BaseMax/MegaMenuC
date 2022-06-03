@@ -65,11 +65,6 @@ struct tree_t* menu(MYSQL *con, int parent_id)
     // int num_fields = mysql_num_fields(result);
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(result))) {
-        // for(int i = 0; i < num_fields; i++) {
-        //     printf("%s ", row[i] ? row[i] : "NULL");
-        // }
-        // printf("\n");
-
         struct tree_value_t *item = (struct tree_value_t*)malloc(sizeof(struct tree_value_t));
         item->id = row[0];
         item->name = malloc(sizeof(char) * (strlen(row[1]) + 1));
@@ -80,11 +75,6 @@ struct tree_t* menu(MYSQL *con, int parent_id)
     }
 
     mysql_free_result(result);
-
-    // foreach ($items as &$row) {
-    //     $row["children"] = menu($db, $row["id"]);
-    //     if ($row["children"] === []) unset($row["children"]);
-    // }
 
     return items;
 }
