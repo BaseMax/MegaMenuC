@@ -58,7 +58,6 @@ struct tree_t* menu(MYSQL *con, int parent_id)
     else
         sprintf(sql, "%s = %d", sql_prefix, parent_id);
 
-
     if (mysql_query(con, sql)) db_error_exit(con);
     MYSQL_RES *result = mysql_store_result(con);
     if (result == NULL) db_error_exit(con);
