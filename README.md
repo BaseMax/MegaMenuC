@@ -1,5 +1,12 @@
 # Mega Menu C
 
+## Using
+
+```sh
+$ gcc menu.c -o menu -I/usr/include/mysql -lmysqlclient
+$ ./menu
+```
+
 ### Tree
 
 ```
